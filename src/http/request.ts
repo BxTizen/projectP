@@ -4,13 +4,19 @@ const service = axios.create({
     timeout: 15000
 });
 // axios实例拦截请求
-service.interceptors.request.use(config => {
-    return config;
-}, error => {
-    return Promise.reject(error);
-});
+service.interceptors.request.use(
+    (config) => {
+        return config;
+    },
+    (error) => {
+        return Promise.reject(error);
+    }
+);
 // axios实例拦截响应
-service.interceptors.response.use(response => {
-    return response.data;
-} , error => {} );
+service.interceptors.response.use(
+    (response) => {
+        return response.data;
+    },
+    (error) => {}
+);
 export default service;

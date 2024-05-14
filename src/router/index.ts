@@ -8,12 +8,12 @@ const routes: Array<RouteRecordRaw> = [
         name: 'home',
         component: () => import('@/views/home/index.vue'),
         meta: {},
-        children: [],
-    },
+        children: []
+    }
 ];
 const router = createRouter({
     history: createWebHashHistory(),
-    routes,
+    routes
 });
 router.beforeEach(async (_to, _from, next) => {
     NProgress.start();
